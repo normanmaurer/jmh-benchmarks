@@ -38,4 +38,10 @@ public class ThrowableBenchmark {
         writer.failPendingWritesStatic(pendingWrites);
         return pendingWrites.length;
     }
+    
+    @GenerateMicroBenchmark
+    public int failPendingWritesStackless() {
+        writer.failPendingWritesStackless(pendingWrites);
+        return pendingWrites.length;
+    }
 }

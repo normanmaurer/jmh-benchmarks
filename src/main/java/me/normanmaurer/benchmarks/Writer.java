@@ -29,4 +29,10 @@ public class Writer {
             write.setFailure(CLOSED_CHANNEL_EXCEPTION);
         }
     }
+    
+    void failPendingWritesStackless(PendingWrite... writes) {
+        for (PendingWrite write: writes) {
+            write.setFailure(new StacklessRuntimeException(""));
+        }
+    }
 }
